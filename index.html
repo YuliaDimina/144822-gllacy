@@ -40,7 +40,7 @@
                         <div class="user-menu-search-icon">
                             <div class="search-modal">
                                 <form action="https://htmlacademy.ru" method="get">
-                                    <input type="search" name="text-search" placeholder="Что ищем?">
+                                    <input type="search" name="text-search" id="text-search" placeholder="Что ищем?">
                                     <label for="text-search" class="search-label">Слово для поиска</label>
                                 </form>
                             </div>
@@ -50,9 +50,9 @@
                         <a href="#" class="user-menu-enter">Вход</a>
                         <div class="enter-modal">
                             <form class="enter-form" action="https://htmlacademy.ru" method="get">
-                                <input type="text" name="text-mail" placeholder="Электронная почта">
+                                <input type="text" name="text-mail" id="text-mail" placeholder="Электронная почта">
                                 <label for="text-mail" class="enter-mail">Ваша почта?</label>
-                                <input type="text" name="text-password" placeholder="Пароль">
+                                <input type="text" name="text-password" id="text-password" placeholder="Пароль">
                                 <label for="text-password" class="enter-password">Ваш пароль?</label>
                                 <input class="buy-button enter-button" type="button" name="button" value="Войти">
                                 <a href="#">Забыли пароль?</a>
@@ -195,11 +195,11 @@
         <button class="modal-window-close" type="button" title="Закрыть">Закрыть</button>
         <form class="footer-user-letter" action="#" method="post">
             <input id="name1" type="text" name="user-name" placeholder="Как вас зовут?">
-            <label for="user-name" class="modal-user-name">Ваше имя?</label>
+            <label for="name1" class="modal-user-name">Ваше имя?</label>
             <input id="mail1" type="text" name="user-mail" placeholder="Ваша почта для ответа?">
-            <label for="user-mail" class="modal-user-mail">Ваша почта?</label>
+            <label for="mail1" class="modal-user-mail">Ваша почта?</label>
             <textarea id="text1" name="user-text" rows="5" cols="50" placeholder="Напишите что-нибудь..."></textarea>
-            <label for="user-text" class="modal-user-text">Текст для отправки</label>
+            <label for="text1" class="modal-user-text">Текст для отправки</label>
             <button class="buy-button enter-button modal-letter-button" type="submit" name="user-submit" value="отправить">Отправить</button>
         </form>
     </div>
