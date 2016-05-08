@@ -1,14 +1,19 @@
 body {
     margin: 0;
     padding: 0;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'Arial', sans-serif;
     font-size: 16px;
     line-height: 22px;
     color: #ffffff;
 }
 
-.site-wrapper {
+.main-container {
     width: 860px;
+    margin: auto;
+}
+
+.site-wrapper {
+    width: auto;
     margin: auto;
     padding: 0px 20px;
     min-height: auto;
@@ -145,6 +150,7 @@ body > input[type="radio"] {
     background-image: url("../img/slide-3.png");
 }
 
+
 /*********************************************************Шапка*/
 
 header {
@@ -178,12 +184,14 @@ header .logo {
 .contacts-title,
 .contacts-info {
     display: inline-block;
+    vertical-align: inherit;
 }
 
 .main-menu {
+    width: 380px;
     position: absolute;
     top: 22px;
-    left: 169px;
+    left: 163px;
 }
 
 .main-menu .menu-items,
@@ -197,8 +205,8 @@ header .logo {
 
 .main-menu .menu-items-item {
     display: inline-block;
-    margin-right: 9px;
-    padding: 8px;
+    vertical-align: inherit;
+    padding: 8px 13px;
 }
 
 .menu-items .menu-item {
@@ -224,7 +232,7 @@ header .logo {
     box-shadow: inset 0px 2px 1px 0px rgba(0, 0, 0, 0.75);
 }
 
-.menu-items .menu-items-item:hover .menu-item {
+.menu-items-item:hover .menu-item {
     color: #323232;
 }
 
@@ -235,6 +243,7 @@ header .logo {
     left: -8px;
     width: 145px;
     background-image: url("../img/table-bg.jpg");
+    background-color: #f8f7f3;
     border-radius: 5px;
     box-shadow: 0px 20px 20px 0px rgba(0, 0, 0, 0.4);
 }
@@ -277,6 +286,7 @@ header .logo {
 
 .main-menu .sub-menu-item {
     display: inline-block;
+    vertical-align: inherit;
     width: 105px;
     padding: 7px 20px;
     padding-bottom: 7px;
@@ -288,11 +298,7 @@ header .logo {
     font-weight: normal;
 }
 
-#item-active {
-    background-color: #f6b5a5;
-}
-
-.menu-items .menu-items-item:hover > .sub-menu-items {
+.menu-items-item:hover > .sub-menu-items {
     display: block;
 }
 
@@ -341,6 +347,7 @@ header .logo {
     top: 38px;
     right: 0;
     background-image: url("../img/table-bg.jpg");
+    background-color: #f8f7f3;
     border-radius: 5px;
     box-shadow: 0px 20px 20px 0px rgba(0, 0, 0, 0.4);
 }
@@ -358,6 +365,27 @@ header .logo {
     color: #d3d3d2;
     border: 1px solid #d3d3d2;
     border-radius: 5px;
+}
+
+.search-modal input[name=text-search]:hover,
+.search-modal input[name=text-search]:focus {
+    line-height: 22px;
+    padding-left: 14px;
+    padding-right: 6px;
+}
+
+.search-modal input[name=text-search]:focus + label {
+    display: block;
+}
+
+.search-modal input[name=text-search]:focus {
+    color: #323232;
+    font-weight: 600;
+}
+
+.search-modal .search-label {
+    top: 5px;
+    left: 38px;
 }
 
 .user-menu-search:hover > .user-menu-search-icon .search-modal {
@@ -411,9 +439,12 @@ header .logo {
     top: 38px;
     right: 137px;
     padding: 18px;
+    padding-top: 20px;
     background-image: url("../img/table-bg.jpg");
+    background-color: #f8f7f3;
     border-radius: 5px;
     box-shadow: 0px 20px 20px 0px rgba(0, 0, 0, 0.4);
+    z-index: 35;
 }
 
 .enter-form,
@@ -424,6 +455,7 @@ header .logo {
 
 .enter-form input[name=text-mail],
 .enter-form input[name=text-password] {
+    position: relative;
     width: 218px;
     height: 40px;
     margin-bottom: 23px;
@@ -436,6 +468,46 @@ header .logo {
     color: #d3d3d2;
     border: 1px solid #d3d3d2;
     border-radius: 5px;
+}
+
+.enter-form input[name=text-mail]:hover,
+.enter-form input[name=text-password]:hover {
+    line-height: 22px;
+    padding-left: 14px;
+    padding-right: 6px;
+}
+
+.enter-form input[name=text-mail]:focus,
+.enter-form input[name=text-password]:focus {
+    line-height: 22px;
+    padding-left: 14px;
+    padding-right: 6px;
+}
+
+.enter-form .enter-mail,
+.enter-form .enter-password,
+.search-modal .search-label {
+    display: none;
+    position: absolute;
+    color: #5b9ddf;
+    font-size: 11px;
+    line-height: 13px;
+    padding: 0;
+    margin: 0;
+}
+
+.enter-form .enter-mail {
+    top: 5px;
+    left: 38px;
+}
+
+.enter-form input[name=ttext-password]:hover ~ .enter-form .enter-password {
+    display: block;
+}
+
+.enter-form .enter-password {
+    top: 73px;
+    left: 38px;
 }
 
 .enter-form a {
@@ -452,14 +524,6 @@ header .logo {
     color: #e84d37;
 }
 
-.enter-button {
-    position: relative;
-    left: -143px;
-    padding: 0 px 25px;
-    outline: 0;
-    border: none;
-}
-
 .user-enter:hover .user-menu-enter ~ .enter-modal {
     display: block;
 }
@@ -469,13 +533,13 @@ header .logo {
     padding-bottom: 5px;
 }
 
-.user-menu .user-menu-backet {
-    height: 23px;
-    margin-right: 0;
-}
-
 .header-catalog .user-backet:hover .user-menu-backet ~ .backet-modal {
     display: block;
+}
+
+.prodact-choice input {
+    font-size: 0px;
+    color: transparent;
 }
 
 .user-menu-backet::before {
@@ -503,21 +567,24 @@ header .logo {
 
 .user-menu .user-menu-backet {
     display: inline-block;
+    height: 23px;
     padding: 0;
     padding-top: 10px;
     padding-left: 45px;
-    padding-right: 35px;
+    padding-right: 34px;
     margin: 0;
-    margin-right: 8px;
+    margin-right: 11px;
     text-decoration: none;
     color: #ffffff;
     text-align: center;
     vertical-align: middle;
     font-size: 14px;
     line-height: 16px;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
-.header-catalog .user-menu .user-menu-backet {
+.header-catalog .user-menu-backet {
     padding-right: 15px;
 }
 
@@ -528,6 +595,7 @@ header .logo {
     top: 37px;
     padding: 21px 15px;
     background-image: url("../img/table-bg.jpg");
+    background-color: #f8f7f3;
     width: 510px;
     border-radius: 5px;
     box-shadow: 0px 20px 20px 0px rgba(0, 0, 0, 0.4);
@@ -644,11 +712,7 @@ caption {
     height: 38px;
 }
 
-.interactiv-letter input:hover {
-    width: 213px;
-    height: 40px;
-}
-
+.interactiv-letter input:hover,
 .interactiv-letter input:focus {
     width: 213px;
     height: 40px;
@@ -659,21 +723,22 @@ caption {
     border-radius: 25px;
 }
 
-.header-catalog .menu-items-item:nth-child(1) {
-    background-color: #d07058;
-    border-radius: 25px;
-}
-
 .work-info {
     width: 170px;
     position: absolute;
-    top: 70px;
-    left: 692px;
+    top: 47px;
+    right: 10px;
     text-align: right;
+}
+
+.header-catalog .work-info {
+    top: 70px;
+    right: 0px;
 }
 
 .work-info-days {
     display: inline-block;
+    vertical-align: inherit;
     font-size: 14px;
     line-height: 16px;
     margin-bottom: 2px;
@@ -681,8 +746,31 @@ caption {
 
 .work-info-tel {
     display: inline-block;
+    vertical-align: inherit;
     font-size: 22px;
     line-height: 24px;
+    font-weight: 600;
+}
+
+.item-active {
+    background-color: #f6b5a5;
+}
+
+.enter-form input[name=text-mail]:focus + label {
+    display: block;
+}
+
+.enter-form input[name=text-mail]:focus {
+    color: #323232;
+    font-weight: 600;
+}
+
+.enter-form input[name=text-password]:focus + label {
+    display: block;
+}
+
+.enter-form input[name=text-password]:focus {
+    color: #323232;
     font-weight: 600;
 }
 
@@ -691,7 +779,7 @@ caption {
 
 .offers {
     margin: auto;
-    padding-bottom: 35px;
+    padding-bottom: 38px;
 }
 
 .offer {
@@ -705,18 +793,25 @@ caption {
 .offer-berry {
     margin-right: 16px;
     background-image: url("../img/strowberry-bg.png");
+    background-color: #d24563;
+    border-radius: 15px;
 }
 
 .offer-choco {
     background-image: url("../img/choco-bg.png");
+    background-color: #4b2615;
+    border-radius: 15px;
 }
 
 .offer h2 {
+    height: 40px;
     margin: 0;
     margin-bottom: 17px;
     padding: 0;
     font-size: 35px;
     line-height: 41px;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .offer p,
@@ -726,12 +821,15 @@ caption {
 }
 
 .offer p {
+    height: 66px;
     margin: 0;
     margin-bottom: 22px;
     padding: 0;
+    overflow: hidden;
 }
 
 .buy-button {
+    height: 22px;
     float: right;
     padding: 11px 22px;
     text-decoration: none;
@@ -741,6 +839,7 @@ caption {
     background: -webkit-linear-gradient(top, #f26843 0%, #e74a35 100%);
     background: linear-gradient(to bottom, #f26843 0%, #e74a35 100%);
     box-shadow: 0 2px 2px rgba(172, 16, 0, 0.64);
+    overflow: hidden;
 }
 
 .backet-button {
@@ -766,6 +865,7 @@ caption {
 
 .hit img {
     display: inline-block;
+    vertical-align: inherit;
 }
 
 .hit::before {
@@ -776,6 +876,8 @@ caption {
     top: 0;
     left: 0;
     background-image: url("../img/13-hit.png");
+    background-color: #ffffff;
+    border-radius: 50%;
 }
 
 .main-catalog .hit::before {
@@ -788,7 +890,7 @@ caption {
 
 .hit .hit-price {
     position: absolute;
-    top: 140px;
+    top: 137px;
     margin: 0;
     padding: 0;
     font-size: 45px;
@@ -800,18 +902,24 @@ caption {
 }
 
 .hit .hit-name {
-    height: 62px;
+    height: 64px;
+    overflow: hidden;
     text-overflow: ellipsis;
     display: inline-block;
+    vertical-align: text-bottom;
     color: #ffffff;
     text-align: center;
-    margin-top: 5px;
+    margin-top: 10px;
     padding: 0px 8px;
     text-decoration: none;
 }
 
-.hit .hit-name span {
+.hit-name span {
     box-shadow: inset 0 -1px 0 0 rgba(255, 255, 255, 0.4);
+}
+
+.hit-name span:hover {
+    color: #ffbc9e;
 }
 
 .catalog-buy-button {
@@ -854,12 +962,14 @@ caption {
     padding-left: 20px;
     margin-bottom: 40px;
     background-image: url("../img/wafer-bg.png");
+    background-color: #f1e8d6;
     border-radius: 15px;
     color: #323232;
 }
 
 .advertise h3 {
     display: inline-block;
+    vertical-align: inherit;
     width: 695px;
     margin: 0;
     padding: 0;
@@ -881,6 +991,7 @@ caption {
 }
 
 .about {
+    height: 110px;
     position: relative;
     padding-top: 22px;
     margin: 0;
@@ -930,9 +1041,6 @@ caption {
     background-position: -5px -63px;
 }
 
-.farms {
-    margin-bottom: 22px;
-}
 
 /*********************************************Интерактив*/
 
@@ -947,24 +1055,35 @@ caption {
     margin-right: 16px;
     padding: 0px 20px;
     background-image: url("../img/berry-bg.png");
+    background-repeat: no-repeat;
+    background-color: #fddae3;
+    border-radius: 15px;
     background-position: center;
     vertical-align: top;
 }
 
 .interactiv-blog .article-title {
+    height: 22px;
     display: inline-block;
+    vertical-align: inherit;
     margin-top: 22px;
     margin-bottom: 6px;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .interactiv-blog .blog-item {
     display: inline-block;
+    vertical-align: bottom;
     width: 295px;
-    margin-bottom: 80px;
+    height: 90px;
+    margin-bottom: 79px;
     font-size: 24px;
     line-height: 30px;
     font-weight: 600;
     color: #323232;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .blog-item span {
@@ -976,18 +1095,25 @@ caption {
     padding: 0px 25px;
     padding-left: 29px;
     background-image: url("../img/letter-bg.png");
+    background-repeat: no-repeat;
+    background-color: #f8f7f4;
+    border-radius: 15px;
     background-position: center;
     vertical-align: top;
 }
 
 .interactiv-letter p {
     display: inline-block;
+    vertical-align: inherit;
     width: 370px;
+    height: 88px;
     margin: 0;
     margin-top: 34px;
     margin-bottom: 14px;
     padding: 0;
     color: #323232;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .interactiv-letter .buy-button {
@@ -1007,6 +1133,12 @@ caption {
     line-height: 24px;
 }
 
+.interactiv-letter input:hover,
+.interactiv-letter input:focus {
+    line-height: 22px;
+    padding-left: 9px;
+}
+
 
 /******************************************Карта*/
 
@@ -1018,14 +1150,15 @@ caption {
 
 #map {
     height: 430px;
-    background-image: url("../img/map.png");
+    /*    background-image: url("../img/map.png");*/
+    background-position: center;
 }
 
 .contacts {
     position: absolute;
     width: 260px;
-    height: 305px;
-    top: 65px;
+    height: auto;
+    top: 62px;
     right: 20px;
     padding-left: 25px;
     padding-right: 15px;
@@ -1052,7 +1185,7 @@ caption {
 }
 
 .title-adres {
-    margin-top: 27px;
+    margin-top: 28px;
 }
 
 .info-adres {
@@ -1061,10 +1194,11 @@ caption {
 
 .contacts .letter-button {
     display: inline-block;
+    vertical-align: inherit;
     padding: 10px 28px;
     margin: 0;
     margin-top: 23px;
-    margin-bottom: 27px;
+    margin-bottom: 32px;
     font-size: 18px;
     line-height: 24px;
     font-weight: 600;
@@ -1084,9 +1218,8 @@ footer {
     width: 900px;
     position: relative;
     margin: auto;
-    padding-top: 17px;
+    padding-top: 18px;
     padding-bottom: 40px;
-    background-color: #849d8f;
 }
 
 .social,
@@ -1100,14 +1233,16 @@ footer {
 }
 
 .social {
-    margin-left: 23px;
-    margin-right: 80px;
+    width: 192px;
+    margin-left: 20px;
+    margin-right: 83px;
     padding-bottom: 10px;
 }
 
 .social li,
 .footer-menu li {
     display: inline-block;
+    vertical-align: inherit;
     padding: 0;
     margin: 0;
     margin-right: 8px;
@@ -1115,6 +1250,7 @@ footer {
 
 .social .social-item {
     display: inline-block;
+    vertical-align: inherit;
     width: 31px;
     height: 31px;
     text-decoration: none;
@@ -1128,7 +1264,7 @@ footer {
 
 .footer-menu {
     width: 337px;
-    padding-bottom: 8px;
+    padding-bottom: 10px;
 }
 
 .footer-menu span,
@@ -1180,9 +1316,21 @@ footer {
     margin-left: 52px;
 }
 
-.author span,
+.author img {
+    margin-bottom: 0;
+}
+
+.author .author-content {
+    display: inline-block;
+    vertical-align: top;
+    font-size: 12px;
+    line-height: 18px;
+    color: #ffffff;
+}
+
 .author a {
     display: inline-block;
+    vertical-align: inherit;
     font-size: 12px;
     line-height: 18px;
     color: #ffffff;
@@ -1205,6 +1353,7 @@ footer {
 .social-item:active {
     box-shadow: inset 0 2px 1px rgba(0, 0, 0, 0.7);
 }
+
 
 /********************************************Страница Каталог*/
 
@@ -1272,11 +1421,12 @@ footer {
 h1 {
     padding: 0;
     margin: 0;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
     font-size: 35px;
-    line-height: 41px;
+    line-height: 35px;
     font-weight: 600;
 }
+
 
 /******************************************Фильтр*/
 
@@ -1288,30 +1438,29 @@ h1 {
 .filter-sorting {
     width: 195px;
     display: inline-block;
-    margin-right: 10px;
-}
-
-.filter-price {
     vertical-align: top;
     margin-right: 10px;
 }
 
 .filter-price {
     display: inline-block;
+    vertical-align: top;
+    margin-right: 10px;
 }
 
 .filter-title {
     display: inline-block;
+    vertical-align: inherit;
     margin-bottom: 7px;
     margin-left: 15px;
     font-size: 14px;
     line-height: 16px;
-    font-weight: medium;
 }
 
 .sorting {
     position: relative;
     display: inline-block;
+    vertical-align: inherit;
     padding: 7px;
     padding-left: 15px;
     padding-right: 50px;
@@ -1394,6 +1543,7 @@ fieldset,
 .filter ul,
 .filter li {
     display: inline-block;
+    vertical-align: inherit;
     list-style: none;
     padding: 0;
     margin: 0;
@@ -1404,7 +1554,6 @@ fieldset,
     margin-left: 15px;
     font-size: 14px;
     line-height: 16px;
-    font-weight: medium;
 }
 
 fieldset {
@@ -1434,7 +1583,6 @@ fieldset {
     margin-right: 16px;
     font-size: 16px;
     line-height: 18px;
-    font-weight: medium;
 }
 
 .filter-fatness li:last-child label,
@@ -1450,6 +1598,14 @@ fieldset {
     left: 0;
     border: 1px solid #ffffff;
     border-radius: 50%;
+}
+
+.filter-fatness label:hover::before {
+    width: 17px;
+    height: 17px;
+    left: -1px;
+    top: -1px;
+    border: 2px solid #ffffff;
 }
 
 .filter-fatness label::after {
@@ -1493,6 +1649,14 @@ input[type="checkbox"]:checked + label::after {
     transform: rotate(-45deg);
 }
 
+.additions label:hover::before {
+    width: 17px;
+    height: 17px;
+    top: -1px;
+    left: -1px;
+    border: 2px solid #ffffff;
+}
+
 .additions label {
     margin-right: 19px;
 }
@@ -1502,7 +1666,8 @@ input[type="checkbox"]:checked + label::after {
 }
 
 .filter-button {
-    margin-left: 10px;
+    height: 36px;
+    margin-left: 7px;
     padding: 7px 27px;
     background-color: rgba(255, 255, 255, 0.2);
     border: 2px solid #ffffff;
@@ -1510,6 +1675,7 @@ input[type="checkbox"]:checked + label::after {
     font-size: 16px;
     line-height: 18px;
     border-radius: 25px;
+    overflow: hidden;
 }
 
 .filter-button:hover {
@@ -1525,11 +1691,11 @@ input[type="checkbox"]:checked + label::after {
     color: #323232;
 }
 
+
 /***********************************************Каталог товаров*/
 
 .main-catalog {
     padding-bottom: 30px;
-    margin-bottom: 5px;
     border-bottom: 1px solid rgba(255, 255, 255, 0.3);
 }
 
@@ -1561,7 +1727,7 @@ input[type="checkbox"]:checked + label::after {
 
 .paginator {
     float: right;
-    margin-top: 40px;
+    margin-top: 46px;
 }
 
 .paginator .page-left,
@@ -1590,11 +1756,14 @@ input[type="checkbox"]:checked + label::after {
     transform: rotate(-45deg);
 }
 
-.paginator .page-current,
-.paginator .page:hover {
+.paginator .page-current {
     background-color: #ffffff;
     color: #323232;
     border-radius: 50%;
+}
+
+.paginator .page:hover {
+    background-color: rgba(255, 255, 255, 0.2);
 }
 
 .paginator .page-left:hover,
@@ -1611,6 +1780,16 @@ input[type="checkbox"]:checked + label::after {
 .catalog-buy-button:hover {
     color: #ffffff;
 }
+
+.enter-button {
+    height: 45px;
+    position: relative;
+    left: -143px;
+    padding: 0 px 25px;
+    outline: 0;
+    border: none;
+}
+
 
 /****************************************Спрайты*/
 
@@ -1711,6 +1890,7 @@ input[type="checkbox"]:checked + label::after {
 .modal-window b {
     position: relative;
     display: inline-block;
+    vertical-align: inherit;
     margin-bottom: 20px;
     font-size: 24px;
     line-height: 28px;
@@ -1757,6 +1937,7 @@ input[type="checkbox"]:checked + label::after {
 .modal-window input[type="text"],
 .modal-window textarea {
     display: inline-block;
+    vertical-align: inherit;
     outline: none;
     margin: 0;
     padding: 0;
@@ -1793,24 +1974,48 @@ input[type="checkbox"]:checked + label::after {
     left: 287px;
 }
 
-.modal-window input[type="text"]:hover {
-    width: 243px;
-    height: 39px;
-}
-
+.modal-window input[type="text"]:hover,
 .modal-window input[type="text"]:focus {
     width: 243px;
     height: 39px;
+    padding-left: 14px;
+    padding-right: 6px;
 }
 
-.modal-window textarea:hover {
-    width: 393px;
-    height: 122px;
-}
-
+.modal-window textarea:hover,
 .modal-window textarea:focus {
-    width: 393px;
-    height: 122px;
+    padding: 14px;
+}
+
+.modal-window .modal-user-name,
+.modal-window .modal-user-mail,
+.modal-window .modal-user-text {
+    display: none;
+    position: absolute;
+    font-size: 11px;
+    line-height: 13px;
+    color: #5b9ddf;
+}
+
+.modal-window input[name=user-name]:focus + label,
+.modal-window input[name=user-mail]:focus + label,
+.modal-window textarea:focus + label {
+    display: block;
+}
+
+.modal-window .modal-user-name {
+    top: 50px;
+    left: 38px;
+}
+
+.modal-window .modal-user-mail {
+    top: 115px;
+    left: 38px;
+}
+
+.modal-window .modal-user-text {
+    top: 175px;
+    left: 38px;
 }
 
 .modal-window {
