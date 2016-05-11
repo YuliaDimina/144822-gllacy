@@ -98,8 +98,13 @@
                 <h1>Сливочное мороженое</h1>
                 <form class="filter" action="forma.html" method="get">
                     <div class="filter-sorting">
-                        <span class="filter-title">Сортировка:</span>
-                        <span class="sorting">по популярности</span>
+                    <span class="filter-title">Сортировка:</span>
+                    <select class="sorting">
+							<option value="popularity" id="popularity" selected>по популярности</option>
+							<option value="expensive" id="expensive">сначала недорогие</option>
+							<option value="cheap" id="cheap">сначала дорогиe</option>
+							<option value="fatness" id="fattness">по жирности</option>
+						</select>
                     </div>
                     <div class="filter-price">
                         <span class="filter-title">Цена: 100 руб. - 500 руб.</span>
